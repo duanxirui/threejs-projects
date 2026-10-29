@@ -9,6 +9,7 @@
 - 将独立 npm 包名改为 `car-showroom`，Vite 默认使用相对路径并接受 `VITE_BASE_PATH`，集合校验器和本地案例启动器增加 TypeScript 布局兼容。
 - 新增原创 SVG 展示封面和案例元数据。旧 Car Concept 原始作者与 CC BY 4.0 许可记录继续保留在案例自己的开发方案文档中。
 - **已验证：** GLB 复制 SHA-256 一致；仓库外 `npm ci --offline` 安装 24 个包、类型检查及构建成功；本地 Chrome 加载车辆并可切换语言/车型；集合首页包含两个案例，点击可进入新展厅；`example:validate`、`site:build`、`site:verify` 均通过。
+- **发布与搬迁：** 提交 `4e0e835` 已推送，Actions [40840578492](https://github.com/duanxirui/threejs-projects/actions/runs/40840578492) 成功；新案例页面、GLB、封面、JS/CSS 均返回 HTTP 200。原 `cars` 目录已搬离，旧完整 Git 仓库及 4 处未提交修改保存在 `D:\AI-Codex-Projects\_cars-source-backup-20261029`。
 
 ## 2026-10-29 — 修复本地首页无法进入案例
 

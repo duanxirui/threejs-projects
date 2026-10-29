@@ -2,7 +2,7 @@
 
 > 阶段：T05
 > 配置日期：2026-10-29
-> 状态：GitHub Pages 已成功发布；T06 首个正式案例的线上深链接、封面和 JS/CSS 均已返回 HTTP 200。
+> 状态：GitHub Pages 已成功发布；T06 游乐园和 T07 CAR ATELIER 两个案例已上线，深链接和静态资源 HTTP 验证通过。
 
 ## 1. 现有实现
 
@@ -117,3 +117,12 @@ GitHub Actions 的 Build 和 Publish 两个任务均应成功，并在部署任�
 - **案例深链接：** https://duanxirui.github.io/threejs-projects/examples/miniature-amusement-park/ 返回 HTTP 200，HTML 标题为“像素奇想游乐园 · PIXEL PARK”。
 - **资源验证：** 案例 HTML 引用的 JS、CSS 返回 HTTP 200；首页原创封面 `covers/miniature-amusement-park/preview.svg` 返回 HTTP 200。
 - **真实画面：** 本地 Chrome 已验证桌面和 390×844 手机 WebGL 场景、昼夜切换、暂停、设施聚焦、控制台展开/收起和游客数量调整。线上浏览器自动化能查到标题正确的标签页，但调试器附加返回 `Debugger unattached`，因此没有取得独立的线上画面截图；在线 HTTP 和本地交互结果分别记录。
+
+## 10. T07 汽车展厅迁移发布验收（2026-10-29）
+
+- **案例目录：** `examples/car-showroom/`，TypeScript + Vite + Three.js；保留 CC BY 4.0 Car Concept 模型、程序化 AURORA S1 以及素材来源说明。
+- **提交：** `4e0e835b7532d7d1b6caaa90ab69747ff5d5e30d`；[Actions 运行 40840578492](https://github.com/duanxirui/threejs-projects/actions/runs/40840578492) 为 `completed/success`，SHA 匹配。
+- **站点首页：** https://duanxirui.github.io/threejs-projects/ 返回 HTTP 200。
+- **案例入口：** https://duanxirui.github.io/threejs-projects/examples/car-showroom/ 返回 HTTP 200。
+- **资源：** `models/car-concept.glb`、首页封面 `covers/car-showroom/preview.svg`、案例引用的 JS 与 CSS 均返回 HTTP 200。
+- **本地实测：** 仓库外独立安装和构建成功，Chrome 实际显示 Car Concept、语言切换及 AURORA S1 车型切换；`gallery:dev` 首页可点击进入新案例。线上 Chrome 自动截图通道超时，因此没有独立的线上 WebGL 截图；手机真机性能与触摸验收尚未完成。
