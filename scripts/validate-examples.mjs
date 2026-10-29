@@ -6,7 +6,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const templateDir = path.join(root, 'templates', 'threejs-basic');
 const examplesDir = path.join(root, 'examples');
 const slugPattern = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
-const requiredFiles = ['.gitignore', 'index.html', 'package.json', 'example.json', 'README.md', 'docs/PROJECT.md'];
+const requiredFiles = ['.gitignore', 'index.html', 'package.json', 'example.json', 'README.md'];
 const alternativeFiles = [
   ['src/main.js', 'src/main.ts'],
   ['src/style.css', 'src/styles/main.css'],

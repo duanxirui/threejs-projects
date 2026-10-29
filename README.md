@@ -16,12 +16,12 @@
 
 ## 案例项目介绍
 
-每个案例都提供独立的项目介绍，面向体验者说明功能、交互、技术和素材来源：
+每个案例的 `README.md` 统一作为完整项目介绍，集中说明功能、交互、技术、运行方式和素材来源：
 
-- [像素奇想游乐园 · PIXEL PARK](examples/miniature-amusement-park/docs/PROJECT.md)
-- [CAR ATELIER · 3D 名车展厅](examples/car-showroom/docs/PROJECT.md)
+- [像素奇想游乐园 · PIXEL PARK](examples/miniature-amusement-park/README.md)
+- [CAR ATELIER · 3D 名车展厅](examples/car-showroom/README.md)
 
-新案例通过 `npm run example:create` 创建时，也会自动带上可自行完善的 `docs/PROJECT.md`。
+通过 `npm run example:create` 创建新案例时，直接完善自动生成的 `README.md` 即可。
 
 ## 目录说明
 

@@ -50,7 +50,7 @@ for (const file of docs) {
     failures.push(`未在文档中心登记：${relativeDoc}`);
   }
   if (dirname(file) === docsDir && ![
-    'README.md', 'PROJECT.md', 'development-scheme.md', 'development-plan.md',
+    'README.md', 'development-scheme.md', 'development-plan.md',
   ].includes(relativeDoc)) {
     failures.push(`docs 根目录存在额外项目文档：${relativeDoc}`);
   }
