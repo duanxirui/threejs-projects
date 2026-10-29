@@ -6,7 +6,12 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const templateDir = path.join(root, 'templates', 'threejs-basic');
 const examplesDir = path.join(root, 'examples');
 const slugPattern = /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/;
-const requiredFiles = ['.gitignore', 'index.html', 'src/main.js', 'src/style.css', 'package.json', 'vite.config.js', 'example.json', 'README.md'];
+const requiredFiles = ['.gitignore', 'index.html', 'package.json', 'example.json', 'README.md'];
+const alternativeFiles = [
+  ['src/main.js', 'src/main.ts'],
+  ['src/style.css', 'src/styles/main.css'],
+  ['vite.config.js', 'vite.config.ts'],
+];
 
 async function exists(file) {
   try {
@@ -41,6 +46,12 @@ export async function validateExample(directory) {
   }
 
   if (!slugPattern.test(slug)) errors.push(`目录名称不符合英文 slug 规范：${slug}`);
+
+  for (const alternatives of alternativeFiles) {
+    if (!(await Promise.all(alternatives.map((file) => exists(path.join(directory, file))))).some(Boolean)) {
+      errors.push('缺少 ' + alternatives.join(' 或 '));
+    }
+  }
 
   const metadata = await readJson(path.join(directory, 'example.json'), errors);
   const packageData = await readJson(path.join(directory, 'package.json'), errors);

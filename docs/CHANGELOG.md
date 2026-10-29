@@ -2,6 +2,14 @@
 
 本文件记录已执行的变更；未来计划见 [项目规划](THREEJS_COLLECTION_PLAN.md)。
 
+## 2026-10-29 — T07：迁入 CAR ATELIER 名车展厅
+
+- 新增独立案例 `examples/car-showroom/`，迁入原 `cars` 项目的 TypeScript 源码、9,002,828 字节的 Car Concept GLB、原创资源、程序化 AURORA S1、双语 UI、车漆切换及完整项目开发/授权文档。
+- 保留原工作区 4 个尚未提交的语言和界面修改；原独立 Git 仓库及其历史单独保留，不嵌套到集合仓库。
+- 将独立 npm 包名改为 `car-showroom`，Vite 默认使用相对路径并接受 `VITE_BASE_PATH`，集合校验器和本地案例启动器增加 TypeScript 布局兼容。
+- 新增原创 SVG 展示封面和案例元数据。旧 Car Concept 原始作者与 CC BY 4.0 许可记录继续保留在案例自己的开发方案文档中。
+- **已验证：** GLB 复制 SHA-256 一致；仓库外 `npm ci --offline` 安装 24 个包、类型检查及构建成功；本地 Chrome 加载车辆并可切换语言/车型；集合首页包含两个案例，点击可进入新展厅；`example:validate`、`site:build`、`site:verify` 均通过。
+
 ## 2026-10-29 — 修复本地首页无法进入案例
 
 - 修复 `gallery:dev` 中案例始终被标记为 `ready: false`、卡片只显示等待状态的问题。

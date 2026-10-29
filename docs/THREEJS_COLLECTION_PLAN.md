@@ -2,7 +2,7 @@
 
 > 版本：V1.1
 > 日期：2026-10-29
-> 状态：T01～T06 已完成；T07 待实施。T06 案例已上线，Pages 深链接和静态资源 HTTP 验证通过。
+> 状态：T01～T06 已完成；T07 已迁入第二个独立案例，更多下载与资源体验仍待实施。
 > 项目根目录：`D:\AI-Codex-Projects\threejs-projects`
 
 ## 1. 项目目标
@@ -262,4 +262,4 @@ site-dist/
 
 **T05 已完成上线（2026-10-29）**：新增 GitHub Actions 构建与 Pages 部署工作流、`site:verify` 产物校验和 [部署说明](DEPLOYMENT.md)；干净隔离副本通过 npm CI 安装、案例校验、整站构建和产物校验。本地 `main` 已推送至 `duanxirui/threejs-projects`，GitHub Actions [运行 40823265674](https://github.com/duanxirui/threejs-projects/actions/runs/40823265674) 构建与部署成功；线上首页及 JS/CSS 返回 HTTP 200。
 
-T06 已新增 `examples/miniature-amusement-park/`，在本地 Chrome 验收了实际 WebGL 画面、桌面与手机构图、昼夜切换、设施聚焦和动画暂停；仓库外副本通过独立安装、构建与启动。Pages 深链接、封面和 JS/CSS 均返回 HTTP 200，GitHub Actions 发布成功。T07 按既定阶段节奏实施。
+T06 新增 `examples/miniature-amusement-park/` 并上线。T07 已迁入 `examples/car-showroom/`，保留高精度 GLB、程序化展车、中英文交互及素材许可记录；单独复制安装、类型检查、构建、浏览器加载和集合双案例装配已通过。T07 其余下载体验、资源优化任务继续按阶段实施。

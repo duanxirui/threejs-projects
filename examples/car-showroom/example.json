@@ -1,0 +1,9 @@
+{
+  "slug": "car-showroom",
+  "name": "CAR ATELIER · 3D 名车展厅",
+  "description": "高精度概念跑车与程序化样车互动展厅，支持自由观车、预设视角、车漆与材质切换，以及中英文界面。",
+  "category": "汽车展示",
+  "tags": ["Three.js", "3D 汽车", "TypeScript", "GLB", "材质切换", "双语交互"],
+  "cover": "public/preview.svg",
+  "visible": true
+}

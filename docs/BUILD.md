@@ -57,7 +57,7 @@ site-dist/
         └── assets/          # 案例自身的 JS / CSS 和 Vite 资源
 ```
 
-案例目录和封面只有在至少一个案例 `visible: true` 且成功构建后才出现。T06 已加入公开案例 `miniature-amusement-park`，当前统一构建会输出它的完整页面、专属资源及首页封面；T04 的零案例验收结果保留为历史记录。
+案例目录和封面只有在至少一个案例 `visible: true` 且成功构建后才出现。T07 已加入 TypeScript 案例 `car-showroom`，统一构建当前输出 `miniature-amusement-park` 与 `car-showroom` 两个完整页面及独立资源目录；T04 的零案例验收结果保留为历史记录。
 
 在默认 `/threejs-projects/` 路径下：
 

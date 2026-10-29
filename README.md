@@ -10,9 +10,9 @@
 - **T04：统一静态构建（已完成）**——按公开状态构建独立案例并装配展示首页到 `site-dist/`，已通过多案例、下架及失败回滚检查。
 - **T05：GitHub Pages 自动部署（已完成）**——GitHub Actions 构建、产物检查和 Pages 发布成功；线上首页及 JS/CSS 静态资源已通过 HTTP 检查。
 - **T06：首个正式案例（已完成并发布）**——[像素奇想游乐园](examples/miniature-amusement-park/README.md)，包含五种动态设施、像素渲染、昼夜切换和移动端界面。
-- **T07：更多案例与下载体验（待实施）**——按 [规划文档](docs/THREEJS_COLLECTION_PLAN.md) 后续推进。
+- **T07：更多案例与下载体验（进行中）**——已迁入 [CAR ATELIER 3D 名车展厅](examples/car-showroom/README.md)，多案例展示与独立构建已通过；下载体验等扩展按 [规划文档](docs/THREEJS_COLLECTION_PLAN.md) 后续推进。
 
-当前已提供独立案例模板、展示首页、统一静态构建、自动发布工作流，以及首个已发布的正式案例 `miniature-amusement-park`。案例由 GitHub Actions 部署至 Pages。
+当前已有两个可展示案例：`miniature-amusement-park` 和 `car-showroom`。二者分别维护源码、依赖与资源，集合首页统一展示，GitHub Actions 负责发布。
 
 ## 目录说明
 

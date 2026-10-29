@@ -1,5 +1,6 @@
 import { createServer } from 'vite';
 import { createServer as createNetServer } from 'node:net';
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { generateGallery } from '../../scripts/generate-gallery.mjs';
@@ -43,11 +44,14 @@ function freePort() {
 
 async function listenCase(slug) {
   const directory = path.join(projectRoot, 'examples', slug);
+  const jsConfig = path.join(directory, 'vite.config.js');
+  const tsConfig = path.join(directory, 'vite.config.ts');
+  const configFile = existsSync(jsConfig) ? jsConfig : tsConfig;
   // A free loopback port per case, preserving each case's source and config.
   const port = await freePort();
   const server = await createServer({
     root: directory,
-    configFile: path.join(directory, 'vite.config.js'),
+    configFile,
     base: '/',
     clearScreen: false,
     server: { host: '127.0.0.1', port, strictPort: true, open: false },

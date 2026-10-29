@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">CAR ATELIER 3D 名车互动展厅</title>
+  <desc id="desc">深色数字展台上展示一辆原创概念跑车剪影，周围是环形灯带和蓝色聚光。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#080f1d"/><stop offset=".55" stop-color="#15243a"/><stop offset="1" stop-color="#07101f"/>
+    </linearGradient>
+    <radialGradient id="halo"><stop stop-color="#3fbcd2" stop-opacity=".35"/><stop offset="1" stop-color="#3fbcd2" stop-opacity="0"/></radialGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#eef3f7"/><stop offset=".3" stop-color="#a9bdcc"/><stop offset=".58" stop-color="#577994"/><stop offset="1" stop-color="#19334f"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2a526e"/><stop offset=".75" stop-color="#0a1728"/><stop offset="1" stop-color="#79b9cb"/></linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2b5267"/><stop offset="1" stop-color="#060e1d"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="17"/></filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g opacity=".16" stroke="#7aa7b6" stroke-width="1">
+    <path d="M0 360H800M0 398H800M0 437H800M0 300H800" fill="none"/>
+    <path d="M90 450 365 100M220 450 386 100M350 450 400 100M480 450 413 100M610 450 432 100M740 450 452 100" fill="none"/>
+  </g>
+  <ellipse cx="400" cy="320" rx="355" ry="150" fill="url(#halo)"/>
+  <ellipse cx="401" cy="362" rx="290" ry="47" fill="#02121e" opacity=".9" filter="url(#blur)"/>
+  <ellipse cx="401" cy="342" rx="293" ry="59" fill="url(#floor)" stroke="#74a9b2" stroke-width="2"/>
+  <ellipse cx="401" cy="345" rx="268" ry="45" fill="none" stroke="#4fc6d5" stroke-width="5" opacity=".8"/>
+  <ellipse cx="401" cy="343" rx="245" ry="32" fill="#102438"/>
+  <g opacity=".75" stroke="#77d3dd" stroke-width="2">
+    <path d="M160 315 112 266M642 315 696 260"/>
+    <path d="M118 266V139M690 262V143" stroke-dasharray="5 7" opacity=".45"/>
+  </g>
+  <g transform="translate(0 -2)">
+    <path d="M143 287L173 259 255 243 318 188Q370 166 440 175L513 220 621 232 664 251 678 284 663 299H148Z" fill="url(#body)" stroke="#e4f2f5" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M271 242L326 193Q364 176 436 183L498 222 492 236Z" fill="url(#glass)" stroke="#8cbacb" stroke-width="2"/>
+    <path d="M383 185 379 238" stroke="#9acbd8" stroke-width="2" opacity=".75"/>
+    <path d="M501 222 524 221 608 232" stroke="#e9f0f3" stroke-width="5" opacity=".52"/>
+    <path d="M149 282H678" stroke="#0c2c41" stroke-width="7"/>
+    <path d="M181 257 228 251M610 242 662 256" stroke="#ecf9ff" stroke-width="6" stroke-linecap="round"/>
+    <path d="M148 295 209 297M586 297 664 295" stroke="#4fd1d6" stroke-width="6" stroke-linecap="round"/>
+    <g>
+      <circle cx="258" cy="294" r="39" fill="#07101d" stroke="#152b3d" stroke-width="8"/>
+      <circle cx="258" cy="294" r="25" fill="#60788c" stroke="#d1e1e6" stroke-width="4"/>
+      <circle cx="258" cy="294" r="9" fill="#0b1b2b"/>
+      <path d="M258 269V319M233 294H283M241 277 275 311M275 277 241 311" stroke="#b8d1d8" stroke-width="4"/>
+      <circle cx="561" cy="294" r="39" fill="#07101d" stroke="#152b3d" stroke-width="8"/>
+      <circle cx="561" cy="294" r="25" fill="#60788c" stroke="#d1e1e6" stroke-width="4"/>
+      <circle cx="561" cy="294" r="9" fill="#0b1b2b"/>
+      <path d="M561 269V319M536 294H586M544 277 578 311M578 277 544 311" stroke="#b8d1d8" stroke-width="4"/>
+    </g>
+  </g>
+  <rect x="35" y="32" width="277" height="67" rx="12" fill="#081426" opacity=".87" stroke="#4c697a"/>
+  <text x="54" y="64" fill="#edf6f8" font-family="Arial,sans-serif" font-size="27" font-weight="bold" letter-spacing="3">CAR ATELIER</text>
+  <text x="56" y="83" fill="#85b8c7" font-family="Arial,sans-serif" font-size="10" letter-spacing="3">3D INTERACTIVE SHOWROOM</text>
+  <g fill="#9dbbc8" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">
+    <text x="37" y="414">THREE.JS / TYPESCRIPT</text>
+    <text x="761" y="414" text-anchor="end">EXPLORE · ROTATE · CUSTOMIZE</text>
+  </g>
+</svg>

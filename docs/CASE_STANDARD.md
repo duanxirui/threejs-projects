@@ -28,6 +28,8 @@ examples/<slug>/
 
 独立运行必需资源必须都在案例目录内；不要引用 `../../packages/shared`、其他案例、仓库根目录的配置、资源、环境变量或构建脚本。依赖必须能通过案例自己的 `package.json` 从公开包源安装，不能采用 `workspace:`、`file:`、`link:` 或跨目录相对路径依赖。
 
+TypeScript 案例可以使用 `src/main.ts`、`src/styles/main.css`、`vite.config.ts`，由案例自己的 `build` 脚本执行 TypeScript 检查。集合的结构校验和本地预览启动器都支持这些文件布局；其他独立性要求相同。
+
 ## 2. 创建新案例
 
 在仓库根目录执行：
