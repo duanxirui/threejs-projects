@@ -52,9 +52,9 @@ GALLERY_BUILDABLE_SLUGS=orbit-lab npm run gallery:build
 
 如构建成功列表为空，显式设置空字符串将生成零个可公开链接的案例。实际环境变量已由 T04 统一构建脚本注入。完整构建和输出路径说明见 [BUILD.md](BUILD.md)。
 
-仓库地址尚未设置。如需显示“查看源码”，可在构建时设置 `VITE_REPOSITORY_URL=https://github.com/<owner>/<repo>`；未配置时首页隐藏该链接，避免指向虚构仓库。
+远程仓库已设置为 `https://github.com/duanxirui/threejs-projects`。自动部署工作流会在构建时配置 `VITE_REPOSITORY_URL`，以便为正式案例显示“查看源码”链接。
 
-T05 已添加自动部署工作流，会根据目标 GitHub 仓库自动设置 `VITE_REPOSITORY_URL` 和 `SITE_BASE_PATH`，并验证 `site-dist/`。实际远程仓库与 Pages 启用步骤见 [DEPLOYMENT.md](DEPLOYMENT.md)。
+T05 自动部署工作流已经成功运行，会根据仓库设置 `VITE_REPOSITORY_URL` 和 `SITE_BASE_PATH`，并验证 `site-dist/`。线上地址为 https://duanxirui.github.io/threejs-projects/ ，详见 [DEPLOYMENT.md](DEPLOYMENT.md)。
 
 ## 生成器验证与限制
 

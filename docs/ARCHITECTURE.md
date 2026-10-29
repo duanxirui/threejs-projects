@@ -1,6 +1,6 @@
 # 项目基础架构约定
 
-> 阶段：T01～T05（基础结构、独立模板、展示首页、统一构建和部署配置）
+> 阶段：T01～T05（基础结构、独立模板、展示首页、统一构建和线上部署）
 > 2026-10-29
 
 ## 1. 核心原则
@@ -14,7 +14,7 @@
 - `templates/threejs-basic/`（T02 已实现）：可直接复制的独立 Three.js 基础模板，不在根目录的 npm workspace 列表中。
 - `packages/`：可选开发工具代码。案例不得直接导入根目录中的私有共享包；确需复用应将必要源码纳入案例或使用可公开安装的版本化依赖。
 - `scripts/`：T02 已实现案例创建和静态规范校验；T03 已实现案例索引与封面生成；T04 已实现统一构建；可选源码 ZIP 导出仍为后续计划。
-- `.github/workflows/deploy.yml`（T05 已配置）：GitHub Actions 在 `main` 分支推送时安装依赖、验证、构建并上传 Pages Artifact；远程仓库上线后生效。
+- `.github/workflows/deploy.yml`（T05 已启用）：GitHub Actions 在 `main` 分支推送时安装依赖、验证、构建并发布 Pages Artifact；线上部署已成功。
 - `docs/`：规划、规范、变更、每日实施记录。
 
 ## 3. Workspace 策略
@@ -43,7 +43,7 @@ site-dist/
 
 展示首页的案例元数据和封面由 `scripts/generate-gallery.mjs` 生成，保存于 `apps/gallery/src/data/` 和 `apps/gallery/.generated/public/`，并由 Vite 引入。T04 的 `scripts/build-all.mjs` 传入成功构建案例清单，仅对实际装配完成的案例激活入口，失败则保留上一版 `site-dist/`。参见 [BUILD.md](BUILD.md)。
 
-T05 新增 `scripts/verify-pages.mjs`，在 GitHub Actions 上传 Pages Artifact 前校验首页、案例、封面和本地静态资源引用；工作流在部署后检查首页 HTTP 可达性。首次远程仓库创建、Pages 来源设置和真实线上浏览器验收见 [DEPLOYMENT.md](DEPLOYMENT.md)。
+T05 新增 `scripts/verify-pages.mjs`，在 GitHub Actions 上传 Pages Artifact 前校验首页、案例、封面和本地静态资源引用；工作流在部署后检查首页 HTTP 可达性。仓库、Pages 来源与首次线上部署均已验证；实际案例深链接与浏览器交互仍待补验，详见 [DEPLOYMENT.md](DEPLOYMENT.md)。
 
 ## 5. T01 边界
 

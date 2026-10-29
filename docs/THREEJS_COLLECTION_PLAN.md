@@ -2,7 +2,7 @@
 
 > 版本：V1.1
 > 日期：2026-10-29
-> 状态：T01～T04 已完成；T05 自动部署配置及本地验证已完成，远程上线待实施；T06～T07 待实施
+> 状态：T01～T05 已完成；T06～T07 待实施。T05 的案例深链接验收需待正式案例加入后补做。
 > 项目根目录：`D:\AI-Codex-Projects\threejs-projects`
 
 ## 1. 项目目标
@@ -204,7 +204,7 @@ site-dist/
 4. 使用 GitHub Pages 官方部署工作流上传并发布该目录。
 5. 从首页点击任一案例，确认独立访问地址及静态资源加载正常。
 
-仓库需要在 Settings → Pages 中选用 GitHub Actions 作为发布源。T05 已配置工作流、分支与权限，首次真实发布仍需连接 GitHub 远程仓库。
+仓库已在 Settings → Pages 中选用 GitHub Actions 作为发布源。T05 已完成首次实际发布，线上站点为 https://duanxirui.github.io/threejs-projects/ 。
 
 ## 7. 代码与资源管理约定
 
@@ -260,6 +260,6 @@ site-dist/
 
 **T04 已完成（2026-10-29）**：新增统一构建命令 `npm run site:build`，构建全部公开案例、生成带正确 Pages 子路径的首页和资源，并汇总到 `site-dist/`；双案例装配、案例下架清理、失败保留旧站点等检查通过，详见 [统一构建说明](BUILD.md)。
 
-**T05 自动部署配置已完成（2026-10-29）**：新增 GitHub Actions 构建与 Pages 部署工作流、`site:verify` 产物校验和 [部署说明](DEPLOYMENT.md)；干净隔离副本通过 npm CI 安装、案例校验、整站构建和产物校验。当前本地仓库未绑定 GitHub `origin`，尚无线上部署记录，因此 T05 的首次发布与线上验收仍待完成。
+**T05 已完成上线（2026-10-29）**：新增 GitHub Actions 构建与 Pages 部署工作流、`site:verify` 产物校验和 [部署说明](DEPLOYMENT.md)；干净隔离副本通过 npm CI 安装、案例校验、整站构建和产物校验。本地 `main` 已推送至 `duanxirui/threejs-projects`，GitHub Actions [运行 40823265674](https://github.com/duanxirui/threejs-projects/actions/runs/40823265674) 构建与部署成功；线上首页及 JS/CSS 返回 HTTP 200。
 
-目前没有正式案例，T06～T07 继续按阶段实施。GitHub Pages 首次上线需要确定目标仓库、推送项目并启用 Pages。
+目前没有正式案例，T06～T07 继续按阶段实施。实际案例深链接、WebGL 交互和移动端视觉效果待案例加入后验收。

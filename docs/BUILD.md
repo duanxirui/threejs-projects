@@ -2,7 +2,7 @@
 
 > 阶段：T04
 > 实现日期：2026-10-29
-> GitHub Actions 工作流已在 T05 配置，首次远程发布仍待进行。
+> T05 已完成 GitHub Actions 首次远程发布，详情见 [DEPLOYMENT.md](DEPLOYMENT.md)。
 
 ## 1. 一键构建
 
@@ -64,7 +64,7 @@ site-dist/
 - 首页：`https://<username>.github.io/threejs-projects/`
 - 案例：`https://<username>.github.io/threejs-projects/examples/<slug>/`
 
-这里的地址是部署目标，T04 只创建本地静态产物，实际公开 URL 需要 T05 完成后才能访问。
+项目首页已发布在 `https://duanxirui.github.io/threejs-projects/`。T04 仅负责生成本地静态产物，T05 负责 GitHub Pages 部署。
 
 ## 4. 失败与覆盖保护
 
@@ -90,8 +90,8 @@ site-dist/
 | 模拟案例构建失败 | 通过；返回失败，旧 `site-dist/` 保持完整，暂存目录清理 |
 | 临时验收案例清理与最终构建 | 通过；恢复 0 个正式案例的站点产物 |
 
-上述测试仅证明本地构建、目录装配和路径一致性。此前 T03 的真实浏览器桌面/移动端渲染及交互验收仍未完成；GitHub Pages 线上访问也要等 T05 发布后检查。
+上述测试证明本地构建、目录装配和路径一致性。T05 已确认 GitHub Pages 首页、JS 和 CSS 返回 HTTP 200；真实浏览器桌面/移动端渲染及交互验收仍待补充。
 
 ## 6. 下一阶段
 
-T05 已配置 GitHub Actions：使用 `npm ci` 安装根 workspace 依赖，执行案例规范检查、`npm run site:build`、`npm run site:verify`，将 `site-dist/` 作为 Pages Artifact 发布。仓库链接与 Pages 设置完成后，还需查看实际部署任务并在浏览器中逐个检查首页和案例深链接，参见 [DEPLOYMENT.md](DEPLOYMENT.md)。
+T05 已配置并成功运行 GitHub Actions：使用 `npm ci` 安装根 workspace 依赖，执行案例规范检查、`npm run site:build`、`npm run site:verify`，将 `site-dist/` 作为 Pages Artifact 发布。实际部署结果和仍待完成的案例验收见 [DEPLOYMENT.md](DEPLOYMENT.md)。

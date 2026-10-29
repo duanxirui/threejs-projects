@@ -8,10 +8,10 @@
 - **T02：标准独立案例模板（已完成基础实现）**——建立可复制的 Three.js 模板、案例创建命令、元数据规范和结构校验器，已在仓库外完成安装及构建检查。
 - **T03：展示首页与自动索引（已实现）**——Vue 3 + Vite 首页、分类搜索、空状态和自动案例元数据索引。
 - **T04：统一静态构建（已完成）**——按公开状态构建独立案例并装配展示首页到 `site-dist/`，已通过多案例、下架及失败回滚检查。
-- **T05：GitHub Pages 自动部署（配置已完成）**——已建立 GitHub Actions 构建、产物检查和 Pages 部署工作流；远程仓库与线上发布待连接。
+- **T05：GitHub Pages 自动部署（已完成）**——GitHub Actions 构建、产物检查和 Pages 发布成功；线上首页及 JS/CSS 静态资源已通过 HTTP 检查。
 - **T06～T07**——首个正式案例与扩展，按 [规划文档](docs/THREEJS_COLLECTION_PLAN.md) 后续实施。
 
-当前已提供独立案例模板、展示首页、统一静态构建及自动发布工作流。`examples/` 尚无正式案例，因此首页会显示引导状态。项目尚未连接远程 GitHub 仓库，线上发布状态待验证。
+当前已提供独立案例模板、展示首页、统一静态构建及自动发布工作流。`examples/` 尚无正式案例，因此线上首页会显示新增案例引导。
 
 ## 目录说明
 
@@ -60,7 +60,7 @@ npm run site:verify
 
 默认以 GitHub Pages 项目路径 `/threejs-projects/` 构建，输出到 `site-dist/`。构建器会先生成全部公开案例，再构建展示首页，并仅对成功构建的公开案例开放“进入场景”入口。可以通过 `SITE_BASE_PATH` 调整部署子路径。详见 [统一构建说明](docs/BUILD.md)。
 
-推送到 `main` 后，`.github/workflows/deploy.yml` 将自动执行安装、验证、构建和 Pages 发布。首次发布需先准备目标远程仓库并在 Settings → Pages 中选择 GitHub Actions，详见 [部署说明](docs/DEPLOYMENT.md)。
+推送到 `main` 后，`.github/workflows/deploy.yml` 会自动执行安装、验证、构建和 Pages 发布。目标仓库已绑定，Pages 来源已设为 GitHub Actions，首次线上发布成功。详见 [部署说明](docs/DEPLOYMENT.md)。
 
 ## 开发环境
 
@@ -82,4 +82,7 @@ npm run site:verify
 
 ## GitHub Pages
 
-目标站点路径为 `https://<username>.github.io/threejs-projects/`，各案例使用 `examples/<slug>/` 子路径。自动部署工作流已经配置，实际访问地址将在远程仓库绑定并成功推送部署后确认。
+**已发布网站：** https://duanxirui.github.io/threejs-projects/
+
+**GitHub 仓库：** https://github.com/duanxirui/threejs-projects
+正式案例将使用 `examples/<slug>/` 子路径；当前尚未发布任何正式案例。

@@ -2,7 +2,7 @@
 
 > 阶段：T05
 > 配置日期：2026-10-29
-> 状态：自动部署工作流和本地 CI 核心流程已准备；远程 GitHub 发布尚未执行。
+> 状态：GitHub Pages 已成功发布；线上首页及 JS/CSS 资源已验证。尚无正式案例，深链接与浏览器交互待后续验证。
 
 ## 1. 现有实现
 
@@ -20,7 +20,7 @@
 
 ## 2. 首次发布前的准备
 
-目前本地项目尚未设置 Git 远程地址。请在实际准备使用的 GitHub 账户下创建仓库（建议仓库名 `threejs-projects`），确认仓库可正常使用 GitHub Actions 和 GitHub Pages。
+本地项目已绑定目标仓库 `https://github.com/duanxirui/threejs-projects.git`，`main` 分支已成功推送。下方命令仅供其他新仓库首次配置时参考。
 
 假设目标为 `https://github.com/<owner>/threejs-projects`，在项目根目录运行：
 
@@ -31,7 +31,7 @@ git push -u origin main
 
 若已设置 `origin`，先执行 `git remote -v` 核对，不应盲目添加或覆盖。推送前确认本地文件已提交、无密钥和无误加入的构建产物；Git 凭据必须具有目标仓库写入权限。
 
-在 GitHub 仓库中打开 **Settings → Pages → Build and deployment → Source**，选择 **GitHub Actions**。若首次推送发生在 Pages 启用前，可在 Actions 标签页手动运行 **Deploy Three.js collection to GitHub Pages**。
+目标仓库已在 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**，并已成功执行部署。若将来迁移仓库，可按此步骤重新配置。
 
 GitHub Free 的公共仓库通常可使用 Pages；私有仓库能否发布取决于账户与组织权限。实际仓库可见性和所有者应由使用者确认。
 
@@ -96,4 +96,14 @@ GitHub Actions 的 Build 和 Publish 两个任务均应成功，并在部署任�
 
 2026-10-29 已在仓库的隔离副本中完成 `npm ci`、`example:validate`、`site:build` 和 `site:verify`；校验结果为首页 1 个、正式案例 0 个、静态引用 2 个。原工作目录依赖恢复后，`site:build` 和 `site:verify` 也成功。详细结果见 [开发记录](plans/2026-10-29.md)。
 
-**当前没有 Git 远程地址，也尚未有目标 GitHub 仓库的线上运行记录，因此不能声明 GitHub Pages 已成功发布。** 远程仓库确定并推送以后，再记录实际部署任务、页面地址与线上验收结果。
+## 8. GitHub Pages 线上发布验收（2026-10-29）
+
+- **仓库：** https://github.com/duanxirui/threejs-projects
+- **Pages 网站：** https://duanxirui.github.io/threejs-projects/
+- **初始代码提交：** `715fdec`，已成功推送到 `origin/main`。
+- **首次触发的运行：** [40822479268](https://github.com/duanxirui/threejs-projects/actions/runs/40822479268) 因尚未启用 GitHub Pages，`Configure GitHub Pages` 返回 404；用户随后在仓库设置中启用了 Pages。
+- **成功的部署运行：** [40823265674](https://github.com/duanxirui/threejs-projects/actions/runs/40823265674)，构建和发布两个任务均为 `success`，包括 `Configure GitHub Pages`、`Upload GitHub Pages artifact`、`Deploy GitHub Pages` 及 `Check published homepage`。
+- **线上 HTTP 检查：** 首页返回 200，页面标题包含 `Three.js Lab`；HTML 引用的 JavaScript 和 CSS 资源分别返回 200，路径包含 `/threejs-projects/assets/`。
+- **当前限制：** `examples/` 尚无正式案例，不能验收案例深链接和 WebGL；页面在真实浏览器中的桌面/移动视觉及搜索交互尚未完成验收。
+
+后续向 `main` 提交案例或文档变更，会再次自动触发部署流程。

@@ -18,10 +18,16 @@
 - 在隔离副本中通过 `npm ci` 安装 36 个包，并成功执行 `example:validate`、`site:build`、`site:verify`。
 - 原工作目录运行 `npm ci` 时遇到 Windows 原生模块文件占用（EPERM）；随后 `npm install` 成功恢复依赖，原目录 `site:build`、`site:verify` 再次通过。
 
-### 待完成
+### 线上部署及验收
 
-- 当前 Git 仓库没有远程 `origin`；尚未实际推送、启用 Pages 或取得线上部署成功记录。首次上线需要确定目标 GitHub 仓库并验证真实 URL。
-- 浏览器桌面/移动端、案例 WebGL 及线上深链接验收仍待实际网站可访问后补做。
+- 绑定远程 `origin` 为 `https://github.com/duanxirui/threejs-projects.git`，成功将初始提交 `715fdec` 推送到 `main`。
+- 首次 GitHub Actions 运行 `40822479268` 构建步骤成功，但由于尚未启用 Pages，`Configure GitHub Pages` 返回 404。
+- 在 Pages 来源设置为 GitHub Actions 后，运行 `40823265674` 的构建和部署任务全部成功，包含 Pages Artifact 上传、发布及线上首页检查。
+- 从本机网络验证 `https://duanxirui.github.io/threejs-projects/` 返回 HTTP 200，页面标题正确，JS/CSS 两个静态资源分别返回 HTTP 200。
+
+### 后续补验
+
+- 目前 `examples/` 没有正式案例，线上案例深链接与 WebGL 无法验收。桌面/移动端浏览器视觉及搜索交互仍待补验。
 
 ## 2026-10-29 — T04：统一构建与静态站点装配
 

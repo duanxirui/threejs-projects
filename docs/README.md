@@ -12,7 +12,7 @@
 | [example.schema.json](example.schema.json) | 案例元数据的 JSON Schema | T02 已创建 |
 | [GALLERY.md](GALLERY.md) | 展示首页、索引生成、搜索及路径配置说明 | T03 已创建 |
 | [BUILD.md](BUILD.md) | T04 统一构建命令、输出结构、失败保护和本地验收 | T04 已创建 |
-| [DEPLOYMENT.md](DEPLOYMENT.md) | GitHub Actions 工作流、Pages 首次启用和线上验收 | T05 已创建，待远程发布 |
+| [DEPLOYMENT.md](DEPLOYMENT.md) | GitHub Actions 工作流、Pages 启用及线上验收 | T05 已发布并完成首页及静态资源检查 |
 
 文档维护规则：
 
