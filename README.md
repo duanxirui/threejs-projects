@@ -14,6 +14,15 @@
 
 当前已有两个可展示案例：`miniature-amusement-park` 和 `car-showroom`。二者分别维护源码、依赖与资源，集合首页统一展示，GitHub Actions 负责发布。
 
+## 案例项目介绍
+
+每个案例都提供独立的项目介绍，面向体验者说明功能、交互、技术和素材来源：
+
+- [像素奇想游乐园 · PIXEL PARK](examples/miniature-amusement-park/docs/PROJECT.md)
+- [CAR ATELIER · 3D 名车展厅](examples/car-showroom/docs/PROJECT.md)
+
+新案例通过 `npm run example:create` 创建时，也会自动带上可自行完善的 `docs/PROJECT.md`。
+
 ## 目录说明
 
 | 路径 | 职责 |

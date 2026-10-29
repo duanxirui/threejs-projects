@@ -1,5 +1,7 @@
 # CAR ATELIER — Three.js 3D 名车互动展厅
 
+[**查看完整项目介绍**](docs/PROJECT.md)：展车、交互功能、技术实现、运行方法和素材授权。
+
 本项目已迁入 [Three.js 案例集合](https://github.com/duanxirui/threejs-projects) 的 `examples/car-showroom/`。只复制本文件夹即可独立安装、运行和构建；集合网站会自动收录此案例，统一构建使用子路径 `/threejs-projects/examples/car-showroom/`。原独立仓库 `duanxirui/car-atelier` 的历史保留在原仓库，迁入时的源码修改已包含在本案例。
 
 基于 **Three.js + Vite + TypeScript** 的网页 3D 名车展厅。目前已接入高精度 CC BY 4.0 的 **Car Concept GLB** 作为默认展车，保留程序化 AURORA S1 样车；支持鼠标或触摸旋转、缩放、视角切换、车漆换色与全屏操作。

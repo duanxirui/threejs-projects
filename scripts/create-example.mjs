@@ -79,6 +79,11 @@ async function main() {
   const readme = await readFile(readmeFile, 'utf8');
   await writeFile(readmeFile, readme.replace(/^# .+$/m, `# ${title}`), 'utf8');
 
+  // Every newly created case includes its own reader-facing project introduction.
+  const projectDocFile = path.join(destination, 'docs', 'PROJECT.md');
+  const projectDoc = await readFile(projectDocFile, 'utf8');
+  await writeFile(projectDocFile, projectDoc.replace(/^# .+$/m, '# ' + title), 'utf8');
+
   const indexFile = path.join(destination, 'index.html');
   const index = await readFile(indexFile, 'utf8');
   await writeFile(indexFile, index.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`), 'utf8');

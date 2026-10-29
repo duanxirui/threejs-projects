@@ -2,6 +2,12 @@
 
 本文件记录已执行的变更；未来计划见 [项目规划](THREEJS_COLLECTION_PLAN.md)。
 
+## 2026-10-29 — 统一案例项目介绍
+
+- 为 `miniature-amusement-park` 与 `car-showroom` 各新增独立 `docs/PROJECT.md`，按功能、交互、实现技术、运行步骤与资源许可整理面向读者的介绍。
+- 两个案例的 `README.md` 均新增项目介绍入口；汽车展厅文档中心单独登记介绍文档，同时保留其开发任务与历史资料。
+- 基础模板加入纯项目介绍，`example:create` 会同步生成并替换文档标题；案例规范和结构校验器加入 `docs/PROJECT.md` 要求。
+
 ## 2026-10-29 — T07：迁入 CAR ATELIER 名车展厅
 
 - 新增独立案例 `examples/car-showroom/`，迁入原 `cars` 项目的 TypeScript 源码、9,002,828 字节的 Car Concept GLB、原创资源、程序化 AURORA S1、双语 UI、车漆切换及完整项目开发/授权文档。
