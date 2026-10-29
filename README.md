@@ -9,10 +9,10 @@
 - **T03：展示首页与自动索引（已实现）**——Vue 3 + Vite 首页、分类搜索、空状态和自动案例元数据索引。
 - **T04：统一静态构建（已完成）**——按公开状态构建独立案例并装配展示首页到 `site-dist/`，已通过多案例、下架及失败回滚检查。
 - **T05：GitHub Pages 自动部署（已完成）**——GitHub Actions 构建、产物检查和 Pages 发布成功；线上首页及 JS/CSS 静态资源已通过 HTTP 检查。
-- **T06：首个正式案例（已完成本地开发和构建验收）**——[像素奇想游乐园](examples/miniature-amusement-park/README.md)，包含五种动态设施、像素渲染、昼夜切换和移动端界面。
+- **T06：首个正式案例（已完成并发布）**——[像素奇想游乐园](examples/miniature-amusement-park/README.md)，包含五种动态设施、像素渲染、昼夜切换和移动端界面。
 - **T07：更多案例与下载体验（待实施）**——按 [规划文档](docs/THREEJS_COLLECTION_PLAN.md) 后续推进。
 
-当前已提供独立案例模板、展示首页、统一静态构建、自动发布工作流，以及首个正式案例 `miniature-amusement-park`。案例元数据已公开，推送 `main` 后由 GitHub Actions 同步至 Pages。
+当前已提供独立案例模板、展示首页、统一静态构建、自动发布工作流，以及首个已发布的正式案例 `miniature-amusement-park`。案例由 GitHub Actions 部署至 Pages。
 
 ## 目录说明
 
@@ -86,4 +86,4 @@ npm run site:verify
 **已发布网站：** https://duanxirui.github.io/threejs-projects/
 
 **GitHub 仓库：** https://github.com/duanxirui/threejs-projects
-正式案例使用 `examples/<slug>/` 子路径。首个案例目标页面：https://duanxirui.github.io/threejs-projects/examples/miniature-amusement-park/
+正式案例使用 `examples/<slug>/` 子路径。首个案例在线地址：https://duanxirui.github.io/threejs-projects/examples/miniature-amusement-park/

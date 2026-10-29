@@ -43,7 +43,7 @@ site-dist/
 
 展示首页的案例元数据和封面由 `scripts/generate-gallery.mjs` 生成，保存于 `apps/gallery/src/data/` 和 `apps/gallery/.generated/public/`，并由 Vite 引入。T04 的 `scripts/build-all.mjs` 传入成功构建案例清单，仅对实际装配完成的案例激活入口，失败则保留上一版 `site-dist/`。参见 [BUILD.md](BUILD.md)。
 
-T05 新增 `scripts/verify-pages.mjs`，在 GitHub Actions 上传 Pages Artifact 前校验首页、案例、封面和本地静态资源引用；工作流在部署后检查首页 HTTP 可达性。仓库、Pages 来源与首次线上部署均已验证；实际案例深链接与浏览器交互仍待补验，详见 [DEPLOYMENT.md](DEPLOYMENT.md)。
+T05 新增 `scripts/verify-pages.mjs`，在 GitHub Actions 上传 Pages Artifact 前校验首页、案例、封面和本地静态资源引用；工作流在部署后检查首页 HTTP 可达性。T06 已通过真实案例的在线深链接和静态资源 HTTP 验证，本地 Chrome 画面与交互验收完成，详见 [DEPLOYMENT.md](DEPLOYMENT.md)。
 
 ## 5. T01 边界
 

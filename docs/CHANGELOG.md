@@ -21,7 +21,7 @@
 
 ### 发布
 
-- 案例元数据设为 `visible: true`，由 GitHub Actions 在推送主分支后发布至 Pages；线上验收结果后续补记。
+- 案例元数据设为 `visible: true`。提交 `1e18415` 已推送，GitHub Actions 运行 `40832888779` 成功，线上首页、案例深链接、封面与 JS/CSS 均返回 HTTP 200。线上独立浏览器截图尚未取得，本地 Chrome WebGL 画面已验证。
 
 ## 2026-10-29 — T05：GitHub Pages 自动部署配置
 

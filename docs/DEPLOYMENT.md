@@ -2,7 +2,7 @@
 
 > 阶段：T05
 > 配置日期：2026-10-29
-> 状态：GitHub Pages 已成功发布；T06 已加入首个正式案例并通过本地构建，新的线上案例深链接待本次发布后验证。
+> 状态：GitHub Pages 已成功发布；T06 首个正式案例的线上深链接、封面和 JS/CSS 均已返回 HTTP 200。
 
 ## 1. 现有实现
 
@@ -107,3 +107,13 @@ GitHub Actions 的 Build 和 Publish 两个任务均应成功，并在部署任�
 - **T05 阶段限制：** 当时尚无正式案例，因此无法验收案例深链接和 WebGL。T06 已在本地 Chrome 验证首个案例的桌面与手机画面；线上深链接及画面在正式发布后补验。
 
 后续向 `main` 提交案例或文档变更，会再次自动触发部署流程。
+
+## 9. T06 首个正式案例发布验收（2026-10-29）
+
+- **案例目录：** `examples/miniature-amusement-park/`，`example.json.visible = true`。
+- **发布提交：** `1e18415`，成功推送至 `origin/main`。
+- **GitHub Actions：** [40832888779](https://github.com/duanxirui/threejs-projects/actions/runs/40832888779)，`status=completed`、`conclusion=success`，head SHA 与 `1e18415` 匹配。
+- **线上首页：** https://duanxirui.github.io/threejs-projects/ 返回 HTTP 200。
+- **案例深链接：** https://duanxirui.github.io/threejs-projects/examples/miniature-amusement-park/ 返回 HTTP 200，HTML 标题为“像素奇想游乐园 · PIXEL PARK”。
+- **资源验证：** 案例 HTML 引用的 JS、CSS 返回 HTTP 200；首页原创封面 `covers/miniature-amusement-park/preview.svg` 返回 HTTP 200。
+- **真实画面：** 本地 Chrome 已验证桌面和 390×844 手机 WebGL 场景、昼夜切换、暂停、设施聚焦、控制台展开/收起和游客数量调整。线上浏览器自动化能查到标题正确的标签页，但调试器附加返回 `Debugger unattached`，因此没有取得独立的线上画面截图；在线 HTTP 和本地交互结果分别记录。
