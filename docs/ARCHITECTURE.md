@@ -39,7 +39,7 @@ site-dist/
         └── assets/
 ```
 
-以上目录装配方案已在 T04 实现，正式案例和部署工作流仍属后续阶段。当前独立基础模板见 `templates/threejs-basic/`，其默认 Vite `base` 为 `./`，可通过 `VITE_BASE_PATH` 设置部署子路径。
+以上目录装配方案已在 T04 实现，T05 完成部署工作流，T06 已加入正式案例 `examples/miniature-amusement-park/`。独立基础模板仍位于 `templates/threejs-basic/`；模板和首个案例的默认 Vite `base` 为 `./`，可通过 `VITE_BASE_PATH` 设置部署子路径。
 
 展示首页的案例元数据和封面由 `scripts/generate-gallery.mjs` 生成，保存于 `apps/gallery/src/data/` 和 `apps/gallery/.generated/public/`，并由 Vite 引入。T04 的 `scripts/build-all.mjs` 传入成功构建案例清单，仅对实际装配完成的案例激活入口，失败则保留上一版 `site-dist/`。参见 [BUILD.md](BUILD.md)。
 

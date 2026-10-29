@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title desc">
+  <title id="title">PIXEL PARK 像素奇想游乐园</title>
+  <desc id="desc">悬浮在紫色云海中的玩具游乐园，建有摩天轮、过山车、旋转木马和树木。</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2=".1" y1="0" y2="1"><stop stop-color="#a6b1e8"/><stop offset="1" stop-color="#f3d2dc"/></linearGradient>
+    <linearGradient id="land" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#d6a678"/><stop offset=".52" stop-color="#806a80"/><stop offset="1" stop-color="#4a4968"/></linearGradient>
+    <linearGradient id="top" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#b8e092"/><stop offset="1" stop-color="#73b98b"/></linearGradient>
+    <filter id="shadow"><feGaussianBlur stdDeviation="11"/></filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#sky)"/>
+  <g fill="#fff0fc" opacity=".62">
+    <ellipse cx="122" cy="127" rx="72" ry="18"/><ellipse cx="172" cy="116" rx="43" ry="20"/>
+    <ellipse cx="630" cy="100" rx="87" ry="22"/><ellipse cx="682" cy="83" rx="44" ry="24"/>
+    <ellipse cx="136" cy="350" rx="98" ry="20"/><ellipse cx="694" cy="344" rx="103" ry="17"/>
+  </g>
+  <ellipse cx="410" cy="370" rx="237" ry="27" fill="#615779" opacity=".22" filter="url(#shadow)"/>
+  <path d="M161 262Q407 180 642 262L615 311 570 350 498 374 430 409 396 438 364 399 289 370 234 345 186 305Z" fill="url(#land)"/>
+  <path d="M227 305 289 370 364 399 396 438 430 409 498 374 571 349 612 309 558 318 466 335 359 341Z" fill="#655a73" opacity=".58"/>
+  <ellipse cx="402" cy="261" rx="242" ry="77" fill="#73ab77"/>
+  <ellipse cx="402" cy="251" rx="245" ry="76" fill="url(#top)"/>
+  <path d="M182 248Q410 177 623 247" fill="none" stroke="#e8bc7f" stroke-width="15" stroke-linecap="round"/>
+  <path d="M198 267Q410 201 605 268" fill="none" stroke="#fce0ad" stroke-width="20" opacity=".86"/>
+  <ellipse cx="403" cy="267" rx="156" ry="41" fill="#e9d9ac" opacity=".68"/>
+  <path d="M200 238C224 179 280 211 309 178S360 163 407 196 476 154 522 184 578 169 599 220" fill="none" stroke="#977454" stroke-width="12" stroke-linecap="round"/>
+  <path d="M200 238C224 179 280 211 309 178S360 163 407 196 476 154 522 184 578 169 599 220" fill="none" stroke="#f8c579" stroke-width="7" stroke-linecap="round"/>
+  <g stroke="#976e52" stroke-width="6" stroke-linecap="round">
+    <path d="M225 215V268M285 197V249M333 176V236M378 176V223M431 184V220M488 182V237M549 183V256M585 201V265"/>
+  </g>
+  <g transform="translate(289 198)">
+    <path d="M-42 58L0-51 42 58M-32 59L0-51 32 59" stroke="#9c715c" stroke-width="7" fill="none"/>
+    <circle r="62" fill="none" stroke="#ffcf74" stroke-width="9"/>
+    <circle r="53" fill="none" stroke="#fff0c3" stroke-width="3"/>
+    <g stroke="#ffbd80" stroke-width="3">
+      <path d="M-62 0H62M0-62V62M-44-44L44 44M-44 44L44-44"/>
+    </g>
+    <g fill="#f58a94" stroke="#fff0d9" stroke-width="3">
+      <rect x="-11" y="-70" width="22" height="14" rx="4"/><rect x="-11" y="55" width="22" height="14" rx="4"/>
+      <rect x="-73" y="-6" width="22" height="14" rx="4"/><rect x="51" y="-6" width="22" height="14" rx="4"/>
+    </g>
+    <circle r="9" fill="#f37f8c" stroke="#fff1c2" stroke-width="3"/>
+  </g>
+  <g transform="translate(434 231)">
+    <ellipse cy="44" rx="73" ry="18" fill="#eaa992"/>
+    <rect x="-65" y="30" width="130" height="16" fill="#f3c27e"/>
+    <rect x="-6" y="-27" width="12" height="66" fill="#ffe6aa"/>
+    <path d="M-72 0L0-70 72 0Z" fill="#fff0cf"/>
+    <path d="M-72 0L0-70-48 0ZM-24 0L0-70 24 0ZM48 0L0-70 72 0Z" fill="#f78d96"/>
+    <path d="M-72 0Q0 20 72 0" fill="none" stroke="#ffd17a" stroke-width="9"/>
+    <g fill="#75cfc2"><rect x="-52" y="18" width="21" height="20" rx="3"/><rect x="31" y="18" width="21" height="20" rx="3"/></g>
+    <g fill="#ffc86a"><circle cx="-39" cy="10" r="5"/><circle cx="43" cy="10" r="5"/><circle cx="0" cy="4" r="5"/></g>
+  </g>
+  <g transform="translate(540 228)">
+    <path d="M-40 30L0-38 40 30" fill="none" stroke="#926c55" stroke-width="7"/>
+    <path d="M0-38V19" stroke="#ffe0b4" stroke-width="4"/>
+    <path d="M-44 13Q0 44 44 13L25 35H-25Z" fill="#f5a46d" stroke="#7a7096" stroke-width="4"/>
+  </g>
+  <g>
+    <path d="M213 264L213 232M594 255L594 225M567 277L567 249M341 286L341 256" stroke="#8c6b5c" stroke-width="9"/>
+    <g fill="#5eaf7e">
+      <rect x="194" y="209" width="38" height="29" rx="4"/><rect x="574" y="201" width="41" height="31" rx="4"/>
+      <rect x="549" y="230" width="37" height="25" rx="4"/><rect x="323" y="237" width="37" height="24" rx="4"/>
+    </g>
+    <g fill="#93d08b"><rect x="201" y="203" width="30" height="20" rx="3"/><rect x="583" y="198" width="30" height="24" rx="3"/></g>
+  </g>
+  <g transform="translate(0 6)">
+    <rect x="42" y="34" width="226" height="55" rx="13" fill="#142647" opacity=".92"/>
+    <text x="58" y="61" font-family="Arial,sans-serif" font-size="26" font-weight="800" fill="#ffdfad" letter-spacing="4">PIXEL PARK</text>
+    <text x="60" y="80" font-family="Arial,sans-serif" font-size="10" fill="#d4dcf3" letter-spacing="3">MINIATURE AMUSEMENT WORLD</text>
+  </g>
+  <text x="760" y="414" fill="#536089" text-anchor="end" font-family="Arial,sans-serif" font-size="12" font-weight="bold" letter-spacing="2">THREE.JS EXPERIENCE 001</text>
+</svg>

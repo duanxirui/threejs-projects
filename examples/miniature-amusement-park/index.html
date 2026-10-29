@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101a32" />
+    <meta name="description" content="像素奇想游乐园：一座可互动、能独立运行的微缩动态 3D 浮空岛游乐园。" />
+    <title>像素奇想游乐园 · PIXEL PARK</title>
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="topbar">
+        <div class="brand" aria-label="Pixel Park 像素奇想游乐园">
+          <span class="brand-symbol" aria-hidden="true">✳</span>
+          <span class="brand-copy"><strong>PIXEL PARK</strong><small>微缩奇想游乐园</small></span>
+        </div>
+        <div class="topbar-center" aria-live="polite">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span id="run-status">园区运行中</span>
+          <span class="topbar-divider"></span>
+          <span id="time-status">DAY 01 · 10:00</span>
+        </div>
+        <div class="topbar-actions">
+          <span id="fps-status" class="fps-status" title="当前渲染帧率">FPS --</span>
+          <button id="motion-toggle" class="top-button" type="button" aria-pressed="false" title="暂停/继续动画（空格）">Ⅱ <span>暂停</span></button>
+          <button id="day-toggle" class="top-button" type="button" aria-pressed="false" title="昼夜切换（N）">☾ <span>夜晚</span></button>
+          <button id="camera-reset" class="top-button top-button-primary" type="button" title="恢复全景（R）">⌖ <span>全景</span></button>
+        </div>
+      </header>
+      <main class="scene-shell">
+        <div id="scene" class="scene-canvas" role="img" aria-label="可以旋转、缩放、点选游乐设施的 3D 微缩游乐园"></div>
+        <div class="scene-shade" aria-hidden="true"></div>
+        <div class="scene-heading" aria-hidden="true">
+          <span class="eyebrow">WELCOME TO A TINY WORLD</span>
+          <h1>一点点童话，<br />一整个乐园。</h1>
+          <span class="scene-heading-note">MINIATURE WORLD / EXPERIENCE 001</span>
+        </div>
+        <div class="scene-vertical-label" aria-hidden="true">THE LITTLE WORLD THAT NEVER STOPS</div>
+
+        <aside class="ride-info" aria-live="polite">
+          <div class="info-topline"><span id="ride-index">01 / PARK GUIDE</span><span class="info-star" aria-hidden="true">✦</span></div>
+          <h2 id="ride-title">像素奇想游乐园</h2>
+          <p id="ride-description">一座漂浮在云端的迷你乐园。拖动环游，或点击设施，发现每一个正在运转的小世界。</p>
+          <div class="info-bottom"><span id="ride-stat">5 大动态设施</span><span class="info-location">✳ FLOATING ISLAND</span></div>
+        </aside>
+        <nav class="ride-dock" aria-label="快速聚焦游乐设施">
+          <button class="ride-chip is-active" data-focus="overview" aria-pressed="true" type="button"><span>✳</span> 全景</button>
+          <button class="ride-chip" data-focus="coaster" aria-pressed="false" type="button"><span>⌁</span> 过山车</button>
+          <button class="ride-chip" data-focus="ferris" aria-pressed="false" type="button"><span>◉</span> 摩天轮</button>
+          <button class="ride-chip" data-focus="carousel" aria-pressed="false" type="button"><span>✿</span> 旋转木马</button>
+          <button class="ride-chip" data-focus="ship" aria-pressed="false" type="button"><span>◒</span> 海盗船</button>
+          <button class="ride-chip" data-focus="cups" aria-pressed="false" type="button"><span>♨</span> 茶杯</button>
+        </nav>
+        <div class="scene-hint" aria-hidden="true">拖动旋转 <i></i> 滚轮缩放 <i></i> 点击设施聚焦</div>
+
+        <button id="open-controls" class="open-controls" type="button" aria-controls="control-panel" aria-expanded="true" title="展开控制台（H）">☷ <span>控制台</span></button>
+        <aside id="control-panel" class="control-panel" aria-label="游乐园控制台">
+          <div class="panel-head">
+            <div><span class="panel-eyebrow">PARK OPERATIONS</span><h2>奇想控制台</h2></div>
+            <button id="close-controls" class="panel-close" type="button" aria-label="收起控制台" title="收起控制台（H）">×</button>
+          </div>
+          <div class="panel-section">
+            <div class="section-heading"><span>01</span><h3>游乐园状态</h3></div>
+            <div class="stat-grid">
+              <div class="stat-tile"><span>当前游客</span><strong id="visitor-stat">42</strong><small>VISITORS</small></div>
+              <div class="stat-tile"><span>运行设施</span><strong>05</strong><small>RIDES OPEN</small></div>
+            </div>
+            <div class="mode-switch" role="group" aria-label="昼夜模式">
+              <button id="day-mode" class="is-selected" type="button" aria-pressed="true">☀ 白天</button>
+              <button id="night-mode" type="button" aria-pressed="false">☾ 夜晚</button>
+            </div>
+          </div>
+          <div class="panel-section">
+            <div class="section-heading"><span>02</span><h3>游玩节奏</h3></div>
+            <div class="control-label"><label for="speed-range">运行速度</label><output id="speed-value" for="speed-range">1.0×</output></div>
+            <input id="speed-range" type="range" min="0.25" max="2.5" step="0.25" value="1" />
+            <div class="range-ends"><span>慢慢逛</span><span>快速游玩</span></div>
+            <div class="control-label visitors-label"><label for="visitor-range">游客数量</label><output id="visitor-value" for="visitor-range">42 人</output></div>
+            <input id="visitor-range" type="range" min="8" max="64" step="2" value="42" />
+            <div class="range-ends"><span>8 人</span><span>64 人</span></div>
+          </div>
+          <div class="panel-section">
+            <div class="section-heading"><span>03</span><h3>像素画质</h3></div>
+            <div class="control-label"><label for="pixel-range">渲染精度</label><output id="pixel-value" for="pixel-range">36%</output></div>
+            <input id="pixel-range" type="range" min="25" max="100" step="1" value="36" />
+            <div class="range-ends"><span>复古像素</span><span>高清模型</span></div>
+            <label class="setting-row" for="dither-toggle"><span><strong>有序抖动</strong><small>4 × 4 Bayer 复古颗粒</small></span><input id="dither-toggle" type="checkbox" checked /><span class="setting-switch"></span></label>
+            <label class="setting-row" for="palette-toggle"><span><strong>有限色板</strong><small>柔和的像素玩具配色</small></span><input id="palette-toggle" type="checkbox" checked /><span class="setting-switch"></span></label>
+          </div>
+          <div class="panel-foot">
+            <button id="panel-reset" class="panel-reset" type="button">⌖ 恢复推荐设置</button>
+            <span>BUILT WITH THREE.JS</span>
+          </div>
+        </aside>
+        <div id="scene-error" class="scene-error" role="alert" hidden></div>
+      </main>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

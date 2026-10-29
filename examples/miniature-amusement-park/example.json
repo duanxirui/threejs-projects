@@ -1,0 +1,15 @@
+{
+  "slug": "miniature-amusement-park",
+  "name": "像素奇想游乐园",
+  "description": "漂浮在云端的微缩 3D 游乐园：动态过山车、摩天轮、旋转木马、海盗船和茶杯，支持昼夜、像素渲染与自由探索。",
+  "category": "创意场景",
+  "tags": [
+    "Three.js",
+    "3D 微缩世界",
+    "动画",
+    "像素风",
+    "交互"
+  ],
+  "cover": "public/preview.svg",
+  "visible": true
+}

@@ -2,6 +2,27 @@
 
 本文件记录已执行的变更；未来计划见 [项目规划](THREEJS_COLLECTION_PLAN.md)。
 
+## 2026-10-29 — T06：像素奇想游乐园
+
+### 首个正式案例
+
+- 新增 `examples/miniature-amusement-park/`，具备独立的 `package.json`、锁文件、Vite 配置、原创封面和 README；无需仓库共享源码或远程模型。
+- `src/world.js` 程序化构造绿色浮空岛、泥土与岩石底层、环岛木质过山车、十二座舱摩天轮、旋转木马、海盗船、旋转茶杯、摊位、路灯、植被、体素游客及云朵。
+- `src/main.js` 接入 WebGL、OrbitControls、摄像机平滑聚焦、暂停/速度/游客数量、昼夜光照、低分辨率 RenderTarget、最近邻像素化、Bayer 抖动与有限色板。
+- `index.html` 和 `src/style.css` 实现以游乐园为主画面的响应式界面，右侧可收起控制台、底部设施快捷入口、设施详情和 WebGL 不可用提示。
+- 修正访客数变化时路径进度重置、摩天轮命中区域、桌面页面高度、手机全景距离、浮空岛岩层轮廓与夜晚文字对比度。
+
+### 已验证
+
+- 本地案例 `npm run build` 成功；`npm run example:validate` 通过。
+- 仓库外独立副本 `npm ci --offline` 安装 15 个包，`npm run build` 成功，独立 Vite 服务在 127.0.0.1:5200 输出 `ready`。
+- Chrome 实际绘制桌面和 390×844 手机画面；已验收昼夜切换、摩天轮聚焦、暂停/继续、手机初始折叠控制台与全景构图。手机端控制台展开/收起、人数 42→44、海盗船聚焦交互也通过。桌面观察到约 60 FPS，手机某次观察约 20 FPS；数值受运行环境和视口影响。
+- `npm run site:build` 成功装配首页及 1 个正式案例；`npm run site:verify` 通过，检查 4 个静态资源引用。
+
+### 发布
+
+- 案例元数据设为 `visible: true`，由 GitHub Actions 在推送主分支后发布至 Pages；线上验收结果后续补记。
+
 ## 2026-10-29 — T05：GitHub Pages 自动部署配置
 
 ### 新增

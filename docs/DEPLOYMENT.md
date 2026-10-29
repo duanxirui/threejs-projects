@@ -2,7 +2,7 @@
 
 > 阶段：T05
 > 配置日期：2026-10-29
-> 状态：GitHub Pages 已成功发布；线上首页及 JS/CSS 资源已验证。尚无正式案例，深链接与浏览器交互待后续验证。
+> 状态：GitHub Pages 已成功发布；T06 已加入首个正式案例并通过本地构建，新的线上案例深链接待本次发布后验证。
 
 ## 1. 现有实现
 
@@ -104,6 +104,6 @@ GitHub Actions 的 Build 和 Publish 两个任务均应成功，并在部署任�
 - **首次触发的运行：** [40822479268](https://github.com/duanxirui/threejs-projects/actions/runs/40822479268) 因尚未启用 GitHub Pages，`Configure GitHub Pages` 返回 404；用户随后在仓库设置中启用了 Pages。
 - **成功的部署运行：** [40823265674](https://github.com/duanxirui/threejs-projects/actions/runs/40823265674)，构建和发布两个任务均为 `success`，包括 `Configure GitHub Pages`、`Upload GitHub Pages artifact`、`Deploy GitHub Pages` 及 `Check published homepage`。
 - **线上 HTTP 检查：** 首页返回 200，页面标题包含 `Three.js Lab`；HTML 引用的 JavaScript 和 CSS 资源分别返回 200，路径包含 `/threejs-projects/assets/`。
-- **当前限制：** `examples/` 尚无正式案例，不能验收案例深链接和 WebGL；页面在真实浏览器中的桌面/移动视觉及搜索交互尚未完成验收。
+- **T05 阶段限制：** 当时尚无正式案例，因此无法验收案例深链接和 WebGL。T06 已在本地 Chrome 验证首个案例的桌面与手机画面；线上深链接及画面在正式发布后补验。
 
 后续向 `main` 提交案例或文档变更，会再次自动触发部署流程。
