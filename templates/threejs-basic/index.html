@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a1020" />
+    <meta name="description" content="可独立运行的 Three.js 基础案例模板。" />
+    <title>Three.js 基础案例模板</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="app-shell">
+        <header class="site-header">
+          <a class="logo" href="./" aria-label="案例首页">
+            <span class="logo-mark">◈</span><span>THREE.JS · STARTER</span>
+          </a>
+          <span class="header-tag">独立案例模板</span>
+        </header>
+        <main class="scene-shell">
+          <section class="scene-copy" aria-labelledby="page-title">
+            <span class="eyebrow">INTERACTIVE 3D</span>
+            <h1 id="page-title">自由探索<br />三维空间</h1>
+            <p>拖动旋转视角，滚轮缩放场景。这是一个可以单独复制、开发和发布的 Three.js 项目。</p>
+            <div class="actions">
+              <button id="motion-toggle" type="button">暂停动画</button>
+              <button id="camera-reset" type="button" class="secondary">重置视角</button>
+            </div>
+            <p id="scene-status" class="scene-status" role="status">正在准备 3D 场景…</p>
+          </section>
+          <div id="scene" class="scene-canvas" aria-label="可以拖动旋转的三维场景"></div>
+          <div class="scene-corner" aria-hidden="true">SCENE / 001</div>
+        </main>
+        <footer class="site-footer">
+          <span>Three.js · Vite</span>
+          <span>一个文件夹，一个完整案例</span>
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

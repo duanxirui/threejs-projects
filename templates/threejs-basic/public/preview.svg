@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-labelledby="title">
+  <title id="title">Three.js 基础案例模板预览</title>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1224"/>
+      <stop offset="1" stop-color="#15294b"/>
+    </linearGradient>
+    <linearGradient id="object" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#a3e1ff"/>
+      <stop offset="1" stop-color="#366cd2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#background)"/>
+  <g opacity=".24" stroke="#6da6e6" stroke-width="1">
+    <path d="M0 330 400 190 800 330M0 385 400 235 800 385M0 445 400 290 800 445" fill="none"/>
+    <path d="M140 450 420 200M270 450 430 190M530 450 440 190M660 450 450 200" fill="none"/>
+  </g>
+  <path d="M400 95 522 166 522 304 400 375 278 304 278 166Z" fill="url(#object)" stroke="#d5f3ff" stroke-width="4"/>
+  <path d="M400 95V235L522 166M400 235 278 166M400 235V375" fill="none" stroke="#d4f2ff" stroke-width="3" opacity=".85"/>
+  <path d="M400 95 278 166 400 235 522 166Z" fill="#bee8ff" opacity=".45"/>
+  <circle cx="400" cy="235" r="166" stroke="#6dcbff" stroke-width="2" fill="none" opacity=".18"/>
+  <text x="35" y="410" fill="#bad5f4" font-size="20" font-family="sans-serif">THREE.JS STARTER</text>
+</svg>

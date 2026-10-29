@@ -1,0 +1,9 @@
+{
+  "slug": "threejs-basic",
+  "name": "Three.js 基础案例模板",
+  "description": "可独立运行的 Three.js 交互式基础场景。",
+  "category": "基础入门",
+  "tags": ["Three.js", "基础", "交互"],
+  "cover": "public/preview.svg",
+  "visible": false
+}

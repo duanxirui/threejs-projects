@@ -1,0 +1,31 @@
+# Dependencies and generated output
+node_modules/
+dist/
+site-dist/
+site-dist.__next/
+site-dist.__previous/
+coverage/
+.vite/
+.cache/
+apps/gallery/.generated/
+apps/gallery/src/data/examples.generated.json
+apps/gallery/src/data/examples.generated.json
+*.tsbuildinfo
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs and OS/editor files
+*.log
+*.log.*
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Temporary files
+tmp/
+temp/

@@ -1,0 +1,67 @@
+:root {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #eff5ff;
+  background: #070c17;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+html, body, #app { min-width: 320px; min-height: 100%; margin: 0; }
+button { font: inherit; }
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1800px;
+  margin: auto;
+  padding: 0 clamp(18px, 4vw, 72px);
+}
+
+.site-header, .site-footer { display: flex; align-items: center; justify-content: space-between; }
+.site-header { min-height: 88px; gap: 20px; }
+.logo { color: #edf5ff; text-decoration: none; display: flex; align-items: center; gap: 12px; font-weight: 750; font-size: 14px; letter-spacing: 0.12em; }
+.logo-mark { color: #79c6ff; font-size: 25px; }
+.header-tag { border: 1px solid #324562; border-radius: 99px; padding: 8px 16px; color: #96b0ce; font-size: 12px; }
+
+.scene-shell {
+  position: relative;
+  flex: 1;
+  min-height: min(72vh, 750px);
+  border: 1px solid #263855;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #0a1020;
+  isolation: isolate;
+}
+
+.scene-canvas { position: absolute; inset: 0; }
+.scene-canvas canvas { width: 100%; height: 100%; display: block; }
+.scene-canvas.scene-error { display: grid; place-items: center; color: #c6d7ed; }
+.scene-copy { position: relative; z-index: 1; padding: clamp(28px, 5vw, 80px); max-width: 510px; pointer-events: none; }
+.eyebrow { color: #79c6ff; letter-spacing: 0.24em; font-size: 11px; font-weight: 700; }
+h1 { font-size: clamp(42px, 5.5vw, 76px); letter-spacing: -0.06em; line-height: 1.12; margin: 20px 0; }
+.scene-copy p { line-height: 1.9; font-size: 14px; color: #adbed5; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; pointer-events: auto; }
+.actions button { padding: 12px 22px; border: 1px solid #7ec9ff; background: #78c6ff; color: #071525; border-radius: 10px; font-weight: 650; cursor: pointer; }
+.actions button.secondary { background: #162238d9; color: #d5e7fa; border-color: #496381; }
+.actions button:disabled { opacity: 0.5; cursor: not-allowed; }
+.scene-copy .scene-status { color: #819ab9; font-size: 12px; margin-top: 26px; }
+.scene-corner { position: absolute; right: 26px; bottom: 24px; color: #526d91; font-size: 11px; letter-spacing: 0.2em; pointer-events: none; }
+.site-footer { min-height: 84px; gap: 20px; color: #6f87a6; font-size: 12px; }
+
+@media (max-width: 780px) {
+  .app-shell { padding: 0 12px; }
+  .site-header { min-height: 70px; }
+  .logo { font-size: 11px; }
+  .header-tag { display: none; }
+  .scene-shell { min-height: calc(100svh - 136px); border-radius: 18px; }
+  .scene-copy { padding: 28px 24px; max-width: none; }
+  .scene-copy h1 { font-size: clamp(38px, 9vw, 60px); margin: 12px 0; }
+  .scene-copy p { max-width: 360px; font-size: 12px; line-height: 1.65; }
+  .actions { margin-top: 18px; }
+  .actions button { padding: 10px 16px; font-size: 12px; }
+  .site-footer { min-height: 64px; font-size: 10px; }
+}
