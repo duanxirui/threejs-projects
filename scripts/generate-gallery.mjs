@@ -20,7 +20,34 @@ function allowedBuilds() {
   return allowed;
 }
 
-async function generateGallery({ projectRoot = root, buildableSlugs = allowedBuilds() } = {}) {
+// Only the local launcher sets preview URLs. Production builds use their
+// verified, relative Pages paths.
+function localPreviews() {
+  const raw = process.env.GALLERY_DEV_PREVIEW_URLS;
+  if (!raw) return {};
+  let urls;
+  try {
+    urls = JSON.parse(raw);
+  } catch {
+    throw new Error('GALLERY_DEV_PREVIEW_URLS 必须为 JSON 对象');
+  }
+  if (!urls || typeof urls !== 'object' || Array.isArray(urls)) {
+    throw new Error('GALLERY_DEV_PREVIEW_URLS 必须为 JSON 对象');
+  }
+  for (const [slug, url] of Object.entries(urls)) {
+    if (!/^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/.test(slug) ||
+      typeof url !== 'string' || !/^http:\/\/127\.0\.0\.1:\d+\/$/.test(url)) {
+      throw new Error('本地案例预览地址必须为安全的 loopback URL');
+    }
+  }
+  return urls;
+}
+
+async function generateGallery({
+  projectRoot = root,
+  buildableSlugs = allowedBuilds(),
+  previewUrls = localPreviews(),
+} = {}) {
   const examplesRoot = path.join(projectRoot, 'examples');
   const galleryRoot = path.join(projectRoot, 'apps', 'gallery');
   const dataFile = path.join(galleryRoot, 'src', 'data', 'examples.generated.json');
@@ -60,6 +87,9 @@ async function generateGallery({ projectRoot = root, buildableSlugs = allowedBui
 
     const coverFile = path.basename(metadata.cover);
     const cover = `covers/${name}/${coverFile}`;
+    // Production builds must never embed a loopback development link.
+    const previewUrl = buildable === null && Object.hasOwn(previewUrls, name)
+      ? previewUrls[name] : undefined;
     entries.push({
       slug: name,
       name: metadata.name.trim(),
@@ -69,7 +99,8 @@ async function generateGallery({ projectRoot = root, buildableSlugs = allowedBui
       cover,
       page: `examples/${name}/`,
       source: `examples/${name}/`,
-      ready: buildable !== null,
+      ready: buildable !== null || Boolean(previewUrl),
+      ...(previewUrl ? { previewUrl } : {}),
     });
     assets.push({ from: path.resolve(directory, metadata.cover), folder: name, file: coverFile });
   }

@@ -32,6 +32,10 @@ function resetFilters() {
   activeCategory.value = '全部案例';
 }
 
+function caseUrl(item) {
+  return item.previewUrl || siteUrl(item.page);
+}
+
 function siteUrl(relative) {
   return `${import.meta.env.BASE_URL}${relative}`;
 }
@@ -153,8 +157,8 @@ async function copyCommand() {
               <h3>{{ item.name }}</h3>
               <p>{{ item.description }}</p>
               <div class="case-bottom">
-                <a v-if="item.ready" class="case-open" :href="siteUrl(item.page)">进入场景 <span aria-hidden="true">↗</span></a>
-                <span v-else class="case-pending" title="统一构建与发布将在 T04/T05 接入">等待统一构建 <span aria-hidden="true">↗</span></span>
+                <a v-if="item.ready" class="case-open" :href="caseUrl(item)">进入场景 <span aria-hidden="true">↗</span></a>
+                <span v-else class="case-pending" title="本地开发新增案例后请重启 gallery:dev；部署前请运行 site:build">等待案例服务 <span aria-hidden="true">↗</span></span>
                 <a v-if="sourceUrl(item)" class="case-source" :href="sourceUrl(item)" target="_blank" rel="noopener noreferrer">查看源码</a>
               </div>
             </div>

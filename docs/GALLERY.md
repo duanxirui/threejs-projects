@@ -22,6 +22,14 @@ npm run gallery:preview   # 预览上次编译结果
 
 `gallery:dev`、`gallery:build` 均会先自动生成索引；开发服务器也会监听案例元数据、封面的变化并尝试重新生成索引。构建前必须在根目录安装依赖。
 
+### 本地直接进入案例
+
+从仓库根目录执行 `npm run gallery:dev` 后，程序会同时启动展示首页和所有 `visible: true` 案例自己的 Vite 开发服务。首页默认使用 `http://127.0.0.1:5173/`，端口占用时自动顺延；每个案例自动分配一个空闲的本地端口。终端会列出实际地址。
+
+打开首页后，找到案例卡片，直接点击 **“进入场景”**，就能运行对应的本地 Three.js 案例。案例的源码和资源改动仍由其独立的 Vite 服务热更新。**无需先执行 `site:build`。**
+
+修改现有案例的介绍或封面时，首页索引会自动更新；如果新建案例，或把隐藏案例改成 `visible: true`，需要重新启动 `gallery:dev`，以便为新增案例启动独立服务。
+
 ## 数据筛选规则
 
 1. 扫描 `examples/` 内的一级子目录，并读取各案例的 `example.json`。
@@ -42,7 +50,7 @@ VITE_BASE_PATH=/threejs-projects/ npm run gallery:build
 
 在 Windows PowerShell 中，应先设置 `$env:VITE_BASE_PATH='/threejs-projects/'` 再执行构建命令。普通本地构建默认 `base: './'`，可以在不同静态子路径下部署。
 
-单独执行 `gallery:dev` 或 `gallery:build` 时，未确认完成装配的案例卡片会显示“等待统一构建”，避免点击后 404。T04 已实现统一构建，使用 `npm run site:build` 即可将案例和首页装配到 `site-dist/`。该命令会自动设置 `GALLERY_BUILDABLE_SLUGS`（逗号分隔的成功案例目录名），索引生成器据此收录公开案例并标记为 `ready: true`，激活“进入场景”链接。
+`gallery:dev` 使用本地案例服务地址，直接提供“进入场景”链接。单独执行 `gallery:build` 时，未经过统一装配的案例仍标记为“等待案例服务”，避免生成无法访问的链接。正式站点使用 `npm run site:build`，它会将案例与首页装配到 `site-dist/`，并自动设置 `GALLERY_BUILDABLE_SLUGS`（逗号分隔的成功案例目录名），使构建成功的案例使用 Pages 子路径链接。
 
 例如只有 `orbit-lab` 构建成功时：
 
