@@ -1,72 +1,112 @@
-# CAR ATELIER — Three.js 3D 名车互动展厅
+# CAR ATELIER · 3D 名车互动展厅
 
-一个以 3D 车辆为视觉中心的互动展厅。可以自由旋转、缩放和切换镜头，探索高精度概念车的外观、内饰与车漆材质，也可以切换到程序化工程样车。页面提供中文和英文界面，适配桌面与移动浏览器。
+基于 **Three.js、TypeScript 和 Vite** 的交互式 3D 汽车展厅。以车辆为画面中心，支持自由观车、车型切换、视角预设、车漆与材质调整，以及中英文界面。每个案例均可在 Three.js 项目合集中展示，也可单独安装和运行。
 
-[在线体验](https://duanxirui.github.io/threejs-projects/examples/car-showroom/) · [项目源码](https://github.com/duanxirui/threejs-projects/tree/main/examples/car-showroom)
+[在线体验](https://duanxirui.github.io/threejs-projects/examples/car-showroom/) · [案例源码](https://github.com/duanxirui/threejs-projects/tree/main/examples/car-showroom) · [项目合集](https://github.com/duanxirui/threejs-projects)
+
+## 功能特色
+
+- **自由观车**：鼠标拖动或触摸旋转车辆，滚轮或双指捏合缩放。
+- **视角切换**：提供默认、车头、侧面、车尾机位和视角重置。
+- **车型与外观**：切换展车，选择对应的车漆颜色或原生材质变体。
+- **统一控制器**：通过“车辆信息 / 视角与车漆 / 车型列表”三个入口展开面板，同一时间只展示一个。
+- **沉浸体验**：纯净观车模式、全屏展示、加载进度及失败重试提示。
+- **中英文切换**：中文 / English 界面，语言偏好保存在当前浏览器。
+- **响应式布局**：桌面控制器位于右下方，手机与横屏布局尽量保留完整车辆展示区域。
 
 ## 展示车型
 
-| 车型 | 展示内容与配色 |
+| 车型 | 展示特点 | 外观选项 |
+| --- | --- | --- |
+| **Car Concept** | 高精度 GLB 概念跑车，包含车身、内饰、玻璃和 PBR 材质 | Carmine Candy（糖果胭脂红）、Pearly Swirly（珍珠银白）、Torched Graphite（石墨深灰）三套原生材质变体 |
+| **AURORA S1** | Three.js 程序化生成的原创工程概念车 | 烈焰红、曜石黑、极光银、深海蓝等预设车漆 |
+
+Car Concept 使用 Meshopt 压缩，模型文件约 **9 MB**。本案例展示的是概念车型，不代表任何汽车品牌的官方授权。
+
+## 操作指南
+
+| 操作 | 效果 |
 | --- | --- |
-| **Car Concept** | 高精度 GLB 概念跑车，包含车身、内饰、玻璃及 PBR 材质；支持原生 **Carmine Candy（糖果胭脂红）**、**Pearly Swirly（珍珠银白）**、**Torched Graphite（石墨深灰）** 三套外观与内饰材质变体 |
-| **AURORA S1** | 由 Three.js 几何体生成的原创工程概念车，提供烈焰红、曜石黑、极光银、深海蓝等预设车漆 |
-
-Car Concept 使用 Meshopt 无损压缩，GLB 体积由约 11.77 MB 缩减至约 **9.00 MB**。
-
-## 核心功能与操作
-
-- **自由观车**：通过鼠标拖动或单指滑动旋转视角，滚轮或双指捏合进行缩放。
-- **镜头预设**：可切换默认、车头、侧面和车尾视角，并一键恢复默认机位。
-- **车型与车漆**：切换两辆展车，并根据车型选择原生材质变体或预设颜色。
-- **统一控制器**：右下方集中提供“车辆信息 / 视角与车漆 / 车型列表”三个面板；选择一项展开，其余自动收起。点击场景或按 `Esc` 可关闭面板。
-- **沉浸式体验**：支持纯净观车和全屏，提供车型加载进度、加载失败反馈与重试。
-- **中英文切换**：在顶部切换“中 / EN”，并在浏览器本地保存语言选择。
-- **响应式布局**：桌面控制器位于右下方，手机端收缩至底部，横屏时控制展开区域高度，尽量保留车辆的展示空间。
+| 鼠标拖动 / 手指滑动 | 环绕观察车辆 |
+| 滚轮 / 双指捏合 | 调整镜头距离 |
+| 选择“视角与车漆” | 切换默认、车头、侧面、车尾视角及外观 |
+| 选择“车型列表” | 在 Car Concept 和 AURORA S1 之间切换 |
+| 点击展车区域、按 `Esc` 或使用关闭按钮 | 收起展开的控制面板 |
+| 顶部“中 / EN” | 切换界面语言 |
+| 纯净观车 / 全屏按钮 | 减少界面干扰或全屏浏览 |
 
 ## 技术实现
 
-- **Three.js + TypeScript + Vite + WebGL2**，使用轨道相机、环境光照与 PBR 材质呈现车辆。
-- **GLTFLoader + MeshoptDecoder** 加载压缩的 Car Concept GLB，保留原生材质变体。
-- **资源管理**：模型二进制数据使用有容量上限的内存缓存；切换车型时回收不再使用的几何体、材质与纹理，静止时减少绘制提交。
+- **Three.js / WebGL2**：实时三维渲染、环境光照、PBR 材质与轨道相机。
+- **TypeScript + Vite**：前端开发、类型检查与静态构建。
+- **GLTFLoader + MeshoptDecoder**：加载压缩的 Car Concept GLB 和原生材质变体。
+- **资源管理**：对模型二进制数据进行有容量上限的缓存，切换车型时回收不再使用的几何体、材质及纹理；车辆静止时减少不必要的绘制。
 
-## 模型来源与授权
+## 快速开始
 
-**Car Concept** 模型及贴图来自 [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CarConcept)，作者为 **Eric Chadwick / Darmstadt Graphics Group GmbH**，依据 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 许可使用。本项目对模型进行了 Meshopt 压缩，并处理了已识别的 Khronos 商标显示内容；详细出处、原始哈希与修改说明见 [素材授权记录](docs/development-scheme.md#7-已用模型及授权证据)。
-
-**AURORA S1** 是项目代码生成的原创概念车。展厅展示不代表保时捷、法拉利或其他汽车制造商的官方授权与合作。
-
-## 本地启动
-
-环境要求：Node.js 20.19+ 或 22.12+。项目已提供 `package-lock.json`，新环境优先按锁文件安装：
+建议使用 **Node.js 22.12+**。将 `car-showroom/` 整个目录单独复制到任意位置，在案例目录内运行：
 
 ```bash
 npm ci
 npm run dev
 ```
 
-打开终端输出的本地地址。生产构建与本地预览：
+访问终端显示的本地地址。检查类型与构建生产版本：
 
 ```bash
 npm run build
 npm run preview
 ```
 
-若本机配置的 npm 镜像缺少某个锁定版本，可以指定官方源安装：`npm ci --registry=https://registry.npmjs.org`。只有修改依赖清单时才运行 `npm install` 并同步提交更新的锁文件。
+构建产物位于 `dist/`，包含页面、静态资源和展车模型，可独立部署到静态托管服务。安装依赖需要能够访问 npm 包源。
 
-## 静态部署
+## 项目结构
 
-1. 在 Node.js 环境执行 `npm ci` 和 `npm run build`。
-2. 把 `dist/` **目录内的全部文件**部署到网站根目录，包括 `index.html`、`assets/`、`models/car-concept.glb` 和 `favicon.svg`；生产网站无需 Node.js 常驻进程。
-3. 使用 HTTPS 打开网站，检查车型加载、材质切换、模型来源链接、中文/英文及控制面板。部署后仍需在真实手机上检查触摸、安全区和性能。
+```text
+car-showroom/
+├── src/
+│   ├── core/              # 车辆加载、相机、灯光、材质与渲染
+│   ├── data/cars.ts       # 车型及外观配置
+│   ├── ui/                # 展厅控制界面
+│   ├── styles/main.css    # 页面样式
+│   └── main.ts            # 应用入口
+├── public/
+│   ├── models/            # Car Concept GLB 模型
+│   └── preview.svg        # 案例封面
+├── docs/                  # 开发方案、计划与历史记录
+├── example.json           # 合集首页的案例元数据
+├── package.json           # 独立依赖和命令
+└── vite.config.ts         # Vite 构建与基础路径
+```
 
-独立构建默认使用相对路径 `./`，可部署到任意静态站点子目录；集合统一构建通过 `VITE_BASE_PATH` 注入案例的 Pages 子路径。模型和前端资源地址随 Vite `BASE_URL` 自动调整，无须为单独复制的案例修改配置。
+## 在项目合集中运行与部署
 
-## 集合内 GitHub Pages 预览
+在 [Three.js 项目合集](https://github.com/duanxirui/threejs-projects) 根目录执行：
 
-集合仓库：[duanxirui/threejs-projects](https://github.com/duanxirui/threejs-projects)。
+```bash
+npm run gallery:dev
+```
 
-本案例在集合中的发布路径：https://duanxirui.github.io/threejs-projects/examples/car-showroom/ 。从集合根目录执行 `npm run site:build` 后，统一构建器会将当前案例与首页一起装配；推送到集合仓库的 `main` 后由集合工作流自动发布。
+首页会列出所有公开案例，点击 **CAR ATELIER · 3D 名车展厅** 的“进入场景”即可预览。
 
-## 文档
+合集生产构建与校验：
 
-本 README 为案例的完整项目介绍。开发设计、规划和历史记录统一收录在[文档中心](docs/README.md)：[开发方案](docs/development-scheme.md)、[开发计划](docs/development-plan.md)、[日期日志](docs/plans/2026-10-29.md)。项目原独立仓库为 [duanxirui/car-atelier](https://github.com/duanxirui/car-atelier)，迁移历史保留在开发日志中。
+```bash
+npm run site:build
+npm run site:verify
+```
+
+合集自动将本案例部署到 [car-showroom 在线页面](https://duanxirui.github.io/threejs-projects/examples/car-showroom/)。独立构建默认使用相对资源路径 `./`；合集构建时通过 `VITE_BASE_PATH` 配置对应的 `/threejs-projects/examples/car-showroom/` 路径。
+
+## 开发文档
+
+- [文档中心](docs/README.md)：开发资料入口。
+- [开发方案与模型记录](docs/development-scheme.md)：设计、资源处理和详细素材信息。
+- [开发计划](docs/development-plan.md)：功能状态与后续工作。
+- [开发日志](docs/plans/2026-10-29.md)：近期实施与验收记录。
+
+## 素材来源与授权
+
+**Car Concept** 模型和贴图来自 [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/CarConcept)，作者为 **Eric Chadwick / Darmstadt Graphics Group GmbH**，按照 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 许可使用。项目进行了 Meshopt 压缩，并处理了已识别的 Khronos 商标显示内容。素材出处、许可与修改细节见[模型授权说明](docs/development-scheme.md#7-已用模型及授权证据)。
+
+**AURORA S1** 为项目代码生成的原创概念车。展厅不代表保时捷、法拉利或其他汽车制造商的官方合作或授权。

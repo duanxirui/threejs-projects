@@ -9,7 +9,7 @@ import { dirname, extname, relative, resolve, sep } from 'node:path';
 const root = process.cwd();
 const docsDir = resolve(root, 'docs');
 const failures = [];
-// These two commits belong to the pre-migration car-atelier repository.
+// These two commits belong to the pre-migration independent repository.
 // The collection intentionally has its own Git history and no nested .git.
 // Keep the exact recorded SHAs auditable without asserting they live in the
 // Three.js collection repository.

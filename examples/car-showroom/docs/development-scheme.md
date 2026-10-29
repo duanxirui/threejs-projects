@@ -3,7 +3,7 @@
 > 初始方案：2026-10-19；文档职责调整：2026-10-21；集合迁移：2026-10-29
 > 本文记录**开发方案、技术设计、当前实现索引及已使用素材的来源证据**。阶段进度与待办见[开发计划](development-plan.md)，实际改动与验证按日期见[开发日志](README.md#开发日志)。
 
-迁移到 `threejs-projects/examples/car-showroom/` 后，案例继续使用自身的 Vite、TypeScript、Three.js 和公共资源。独立构建采用相对 `base: './'`；集合发布通过 `VITE_BASE_PATH=/threejs-projects/examples/car-showroom/` 指定路径。原仓库 `duanxirui/car-atelier` 的历史提交和素材许可保持独立可追溯。
+本案例位于 [Three.js 项目合集](https://github.com/duanxirui/threejs-projects) 的 `examples/car-showroom/`。案例使用独立的 Vite、TypeScript、Three.js 和公共资源；独立构建采用相对 `base: './'`，合集发布通过 `VITE_BASE_PATH=/threejs-projects/examples/car-showroom/` 指定路径。迁移前的提交记录保留在历史开发日志中；模型来源与许可记录继续有效。
 
 ## 1. 项目目标与范围
 

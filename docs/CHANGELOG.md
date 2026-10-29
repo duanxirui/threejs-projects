@@ -2,6 +2,12 @@
 
 本文件记录已执行的变更；未来计划见 [项目规划](THREEJS_COLLECTION_PLAN.md)。
 
+## 2026-10-29 — CAR-018：统一名车展厅 README 与合集链接
+
+- 按常见 GitHub README 阅读顺序重排 `examples/car-showroom/README.md`：简介和在线入口、功能、车型、操作、技术、快速开始、项目结构、合集部署、开发文档、素材授权。
+- 清理案例及保留的历史开发文档中迁移前独立仓库与 Pages 的地址；当前代码、预览、构建与部署入口统一引用 `duanxirui/threejs-projects` 及 `/threejs-projects/examples/car-showroom/`。
+- 保留早期发布的历史结果与真实提交号，不再向读者提供已弃用的独立项目链接；未修改运行时代码、模型与资源。
+
 ## 2026-10-29 — 合并重复的案例项目文档
 
 - 将游乐园和汽车展厅的 `docs/PROJECT.md` 介绍整合回各自的 `README.md`，保留独有的场景功能、交互、技术实现和素材来源内容，移除两个重复的项目介绍文件。
